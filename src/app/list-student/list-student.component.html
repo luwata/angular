@@ -1,0 +1,16 @@
+<h2>Etudiants</h2>
+<!-- <ul>
+	<li *ngFor="let student of students">{{student.firstname}}</li>
+</ul> -->
+<div>
+	<p><strong>Moyenne générale : {{moyenneGen}}</strong></p> 
+	<label for="edit_mode"> Edit Mode </label>
+	<input type="checkbox" name="edit_mode" (click)="isChecked($event)">
+</div>
+<div class="container">
+	<div *ngFor="let student of students">
+		<app-student [data]="student" [checkbool]="check_value" (changeEmitter)="noteChange()"></app-student>
+	</div>
+</div>
+
+

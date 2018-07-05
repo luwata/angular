@@ -1,0 +1,22 @@
+span.injured {
+	color: red;
+	font-weight: bold;
+}
+
+span.ok {
+	color: teal;
+	font-weight: bold;
+}
+
+.visible{
+	display: inline;
+}
+
+.not-visible{
+	display : none;
+}
+
+.note-good{
+	color: teal;
+	font-size: 16pt;
+}

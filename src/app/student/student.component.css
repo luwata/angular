@@ -1,0 +1,39 @@
+.student-frame{
+	margin: 2rem 0;
+	border: 3px dashed #ccc;
+	background-color: teal;
+	padding: 2rem 0;
+	color: #FFF;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.group-style{
+	font-size: 1rem;
+	font-style: italic;
+}
+
+.notes-style{
+	display: flex;
+	border: 1px solid #FFF;
+}
+
+.notes-style > td{
+	padding: 0.5rem;
+}
+
+.notes-style > td:last-child{
+	border-left: 1px dotted #FFF;
+}
+
+img.thumb{
+	width: 100px;
+	border: 3px solid #FFF;
+}
+
+.note_input{
+	width: 50px;
+	padding: 0 0.5rem;
+	color: #000;
+	font-weight: bold;
+}

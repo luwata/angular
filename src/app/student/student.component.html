@@ -1,0 +1,28 @@
+<!-- <button (click)="testAjax()">Test Ajax</button>
+
+<div *ngFor="let image of images">
+	<img src="{{image.thumbnailUrl}}" alt="">
+</div> -->
+
+<div class="row student-frame">
+	<div class="col-md-6">
+		<img class="thumb" [src]="student.photo" alt="">
+	</div>
+	<div class="col-md-6">
+		<h3>{{student.firstname}} 
+			<a routerLink="/students/{{student.id}}">{{student.lastname}}</a></h3>
+		<p class="group-style">Groupe : {{student.group}}</p>
+
+		<table>
+			<tr *ngFor="let note of student.notes; index as i" class="notes-style">
+				<td>Note {{i+1}} : </td>
+				<td>
+					<strong *ngIf="!check_value">{{note}} / 20</strong>
+					<input *ngIf="check_value" [value]="note" class="note_input" (keyup)="inputChange($event, i)" type="text">
+					
+				</td>
+			</tr>
+		</table>
+		<p>Moyenne de l'élève : <strong>{{studentService.getAverage(student.notes)}}</strong></p>
+	</div>
+</div>

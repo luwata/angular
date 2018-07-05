@@ -1,0 +1,38 @@
+<h1>Angular : Introduction au Framework</h1>
+<p id="{{id}}">{{message}}</p>
+<img src="{{urlImg}}" alt="image alétaoire">
+
+<h2>Student</h2>
+
+<select (change)="selectGroup($event)">
+  <option value="0">"Selectionner un groupe</option>
+  <option *ngFor="let group of groups">{{group}}</option>
+</select>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Moyenne</th>
+    <th>Photo</th>
+    <th>Groupe</th>
+  </tr>
+
+  <tr *ngFor="let student of students" [ngStyle]="{'display': student.group == selectedGroup || selectedGroup == '0' ? 'table-row' : 'none'}">
+    <td>{{student.firstname}}</td>
+    <td>{{student.lastname}}</td>
+    <td [ngClass]="{'note-good': moyenne(student.notes) > 15 && goodstudents}">{{moyenne(student.notes)}} / 20</td>
+    <td><img [src]="student.photo" alt=""></td>
+    <td>{{student.group}}</td>
+  </tr>
+</table>
+
+<div>
+  <input type="checkbox" (click)="highlightStudent()"><span>Bons étudiants</span>
+</div>
+
+<div>
+    <p *ngIf="compteur == 10">Basta !!!</p>
+    <p [ngStyle]="style1" [ngClass]="{'visible': compteur == 10, 'not-visible': compteur != 10}" >Dosta !!!</p>
+    <button (click)="test()">Test</button><span>{{compteur}}</span>
+</div>
